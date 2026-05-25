@@ -1,0 +1,350 @@
+/* —— Global —— */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+html {
+  /* Theme Variables */
+  --bg: #fdfdfd;
+  --fg: #333;
+  --header-bg: linear-gradient(to right, #fff, #ffd700);
+  --hero-bg: linear-gradient(180deg, #fff, #ffd700);
+  --hero-color: #003366;
+  --accent: #ffd700;
+  --cta-bg: #ffd700;
+  --cta-hover: #ffa500;
+  --nav-link: #003366;
+  --nav-hover: #ffa500;
+  --footer-bg: #003366;
+  --footer-color: #fff;
+  --footer-link: #ffd700;
+  --footer-link-hover: #ffa500;
+}
+/* Dark Mode Overrides */
+html[data-theme="dark"] {
+  --bg: #111;
+  --fg: #ddd;
+  --header-bg: #222;
+  --hero-bg: #333;
+  --hero-color: #fff;
+  --accent: #3399ff;
+  --cta-bg: #3399ff;
+  --cta-hover: #005bb5;
+  --nav-link: #fff;
+  --nav-hover: #3399ff;
+  --footer-bg: #000;
+  --footer-color: #ccc;
+  --footer-link: #3399ff;
+  --footer-link-hover: #66bbff;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* —— Header & Nav —— */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--header-bg);
+  display: flex;
+  align-items: center;
+  padding: 1em 2em;
+  z-index: 1000;
+}
+.logo img {
+  width: clamp(50px, 8vw, 80px);
+  height: clamp(40px, 6vw, 70px);
+}
+.HeaderText h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(18px, 4vw, 28px);
+  color: var(--nav-link);
+  margin-left: 1.5em;
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  margin-left: auto;
+  cursor: pointer;
+  z-index: 1100;
+}
+.menu-toggle span {
+  width: clamp(20px, 6vw, 30px);
+  height: clamp(2px, 0.5vw, 4px);
+  background: var(--nav-link);
+  margin: 4px 0;
+  transition: transform .3s, opacity .3s;
+}
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px,5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px,-5px);
+}
+nav {
+  display: flex;
+  gap: 1em;
+  margin-left: 2em;
+  transition: right .3s ease;
+}
+nav a {
+  text-decoration: none;
+  color: var(--nav-link);
+  font-weight: bold;
+}
+nav a:hover {
+  color: var(--nav-hover);
+}
+
+/* —— Theme Toggle Button —— */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 4rem;      /* shifted left so it won’t cover the hamburger */
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--fg);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1200;
+}
+
+/* —— Hero —— */
+.hero {
+  text-align: center;
+  padding: 4em 2em;  /* reduced from 6em */
+  background: var(--hero-bg);
+  color: var(--hero-color);
+}
+.hero h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  margin-bottom: .5em;
+}
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5em;
+}
+.hero .cta-btn {
+  background: var(--cta-bg);
+  color: var(--hero-color);
+  padding: 1em 2em;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform .3s;
+}
+.hero .cta-btn:hover {
+  background: var(--cta-hover);
+  transform: scale(1.05);
+}
+
+/* —— Carousel —— */
+.carousel {
+  position: relative;
+  max-width: 700px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.carousel img {
+  width: 100%;
+  display: none;
+}
+.carousel img.active {
+  display: block;
+  animation: fade 1s ease-in;
+}
+@keyframes fade {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+.carousel-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.dot {
+  height: 16px;       /* bigger dots */
+  width: 16px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform .2s;
+}
+.dot.active {
+  background-color: var(--accent);
+  transform: scale(1.3); /* pop when active */
+}
+
+/* —— About —— */
+.about {
+  padding: 4em 2em;
+  text-align: center;
+  background: var(--bg);
+}
+.about h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: var(--nav-link);
+  margin-bottom: 1em;
+}
+.about p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* —— Featured Products —— */
+.featured-app {
+  padding: 4em 2em;
+  background: var(--bg);
+  text-align: center;
+  scroll-margin-top: 90px;
+}
+.featured-app h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: var(--nav-link);
+  margin-bottom: 2rem;
+}
+
+/* —— Cards Container —— */
+.app-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+/* —— Card Styles —— */
+.app-card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  background: var(--bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform .3s, box-shadow .3s;
+}
+.app-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.app-image img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+}
+.app-card-content h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  color: var(--nav-link);
+  margin-bottom: .75rem;
+}
+.app-card-content p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+.app-card-content .cta-btn {
+  background: var(--accent);
+  color: var(--nav-link);
+  padding: .75rem 1.5rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-decoration: none;
+  transition: background .3s;
+}
+.app-card-content .cta-btn:hover {
+  background: var(--cta-hover);
+}
+
+/* —— Footer —— */
+footer {
+  background: var(--footer-bg);
+  color: var(--footer-color);
+  text-align: center;
+  padding: 1.5em 0;
+}
+footer a {
+  color: var(--footer-link);
+  text-decoration: none;
+  font-weight: bold;
+}
+footer a:hover {
+  color: var(--footer-link-hover);
+}
+
+/* —— Mobile Nav & Orientation Rules —— */
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  nav {
+    position: fixed;
+    top: 0; right: -100%;
+    height: 100%;
+    width: 200px;
+    flex-direction: column;
+    background: var(--bg);
+    padding-top: 4em;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+  }
+  nav.active { right: 0; }
+  nav a {
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+  }
+  .app-grid { flex-direction: column; }
+}
+@media (orientation: portrait) and (min-width: 769px) {
+  .app-grid { flex-direction: column; }
+}
+@media (orientation: landscape) and (min-width: 769px) {
+  .app-grid { flex-direction: row; }
+}
+
+/* 1. Align the toggle next to the hamburger */
+.theme-toggle {
+  /* move it in line with the menu-toggle */
+  top: 1.2rem;      /* adjust vertical alignment */
+  right: 4.5rem;    /* sit just left of the hamburger */
+}
+
+/* 2. Constrain Hero Carousel height */
+.carousel {
+  max-width: 700px;
+  max-height: 700px;    /* limit overall height */
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  max-height: 700px;    /* ensure each slide obeys the cap */
+  object-fit: cover;    /* crop nicely instead of stretching */
+}

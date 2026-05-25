@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TravMate – Your Whole Trip in One App</title>
+
+  <!-- SEO -->
+  <meta name="description" content="TravMate keeps your entire trip in one place. Organize bookings, track expenses, save media, and get AI-powered insights. Try the guided 60‑second task.">
+  <meta name="keywords" content="TravMate, travel app, trip planner, AI travel companion, Eurappia Labs">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TravMate – Your Whole Trip in One App">
+  <meta property="og:description" content="Watch the demo and try the 60‑second task. TravMate organizes trips, expenses, media, and generates AI insights.">
+  <meta property="og:image" content="https://eurappia.com/images/travmate_preview.png">
+  <meta property="og:url" content="https://eurappia.com/travmate-demo.html">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root{
+      --bg:#f7f9ff; --card:#ffffff; --ink:#0d1225; --muted:#58628a; --brand:#1976d2; --accent:#0bb07b; --ring: rgba(25,118,210,.2);
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+
+    .hero{display:grid;gap:18px;padding:28px;border-radius:20px;background:var(--card);box-shadow:0 20px 60px rgba(13,18,37,.08);text-align:center}
+    h1{font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.1;margin:0}
+    .sub{font-size:1rem;color:var(--muted)}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:10px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;background:var(--brand);color:white;font-weight:700;box-shadow:0 8px 24px var(--ring)}
+    .btn.alt{background:transparent;color:var(--brand);border:2px solid var(--brand)}
+
+    .trust{display:flex;flex-wrap:wrap;gap:18px;margin-top:6px;color:var(--muted);font-size:.92rem;justify-content:center}
+    .trust .pill{background:rgba(25,118,210,.06);border:1px solid rgba(25,118,210,.12);padding:8px 12px;border-radius:999px}
+
+    .grid{display:grid;gap:16px;margin-top:26px}
+    @media(min-width:860px){.grid{grid-template-columns:1.1fr .9fr}}
+    .card{background:var(--card);border:1px solid rgba(25,118,210,.12);border-radius:18px;padding:18px;box-shadow:0 12px 30px rgba(12,17,35,.1)}
+    .label{font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+    .card h3{margin:.3rem 0 0;font-size:1.2rem}
+
+    .steps{display:grid;gap:10px;margin-top:8px}
+    @media(min-width:700px){.steps{grid-template-columns:repeat(3,1fr)}}
+    .step{border:1px dashed rgba(25,118,210,.25);border-radius:16px;padding:14px;font-size:.95rem}
+    .step b{display:block;margin-bottom:6px}
+
+    .video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;margin-top:10px}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:16px}
+
+    .features{display:grid;gap:14px;margin-top:10px}
+    @media(min-width:900px){.features{grid-template-columns:repeat(3,1fr)}}
+    .feature{padding:16px;border-radius:16px;background:var(--card);border:1px solid rgba(25,118,210,.12)}
+    .feature h4{margin:.4rem 0}
+    .feature p{color:var(--muted);margin:0;font-size:.92rem}
+
+    .checklist{list-style:none;padding:0;margin:0;display:grid;gap:10px;margin-top:12px}
+    .checklist li{background:rgba(25,118,210,.06);border:1px solid rgba(25,118,210,.22);padding:10px 12px;border-radius:12px}
+
+    details{background:var(--card);border:1px solid rgba(25,118,210,.12);border-radius:14px;padding:12px;margin-bottom:10px}
+    summary{cursor:pointer;font-weight:700}
+
+    footer{margin:38px 0 20px;color:var(--muted);font-size:.9rem;text-align:center}
+    .stores{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px}
+    .stores img{height:60px;border-radius:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Your whole trip in one app</h1>
+      <p class="sub">Organize bookings, track expenses, save media, and unlock AI insights that make travel easier. Works on iOS, Android, and Web.</p>
+      <div class="cta-row">
+        <a id="btn-ios" class="btn" href="https://apps.apple.com/us/app/travmate/id6751786758">Download on iOS</a>
+        <a id="btn-android" class="btn alt" href="https://play.google.com/store/apps/details?id=com.eurappia.travmate">Get it on Android</a>
+        <a id="btn-web" class="btn alt" href="https://travmate.app/">Open Web App</a>
+      </div>
+      <div class="trust">
+        <div class="pill">🔒 Privacy-first. Your data is yours.</div>
+        <div class="pill">⚡ 14-day full-access free trial</div>
+        <div class="pill">🧠 AI insights from your trips</div>
+        <div class="pill">💬 Chat with Navi, Milo, or Atlas – your travel companions</div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS + VIDEO -->
+    <section class="grid">
+      <div class="card">
+        <div class="label">How it works</div>
+        <h3>From trip chaos to clarity in 3 steps</h3>
+        <div class="steps">
+          <div class="step"><b>1) Create</b> Start a trip and set your destination & currency.</div>
+          <div class="step"><b>2) Add</b> Save bookings, expenses, and media as you go.</div>
+          <div class="step"><b>3) Discover</b> Let AI generate summaries, itineraries, and tips automatically.</div>
+        </div>
+        <div class="features">
+          <div class="feature"><h4>📒 Bookings & Expenses</h4><p>Keep tickets, receipts, and costs in one timeline.</p></div>
+          <div class="feature"><h4>🖼️ Media Gallery</h4><p>Photos & videos auto‑sorted by trip. Share anytime.</p></div>
+          <div class="feature"><h4>🤖 AI Insights</h4><p>Weather tips, transport suggestions, itineraries, and even chat with Navi, Milo, or Atlas about your trip.</p></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="label">Watch 1‑minute demo</div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/bLMRTL7LK5U?si=Zlhpyr1FTTfZK-gI" title="TravMate Demo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- MINI TASK -->
+    <section class="card" style="margin-top:16px;">
+      <div class="label">Try it now (60 seconds)</div>
+      <h3>Feel the value: one tiny task</h3>
+      <ul class="checklist">
+        <li>Install/open TravMate → tap <b>Create Trip</b>.</li>
+        <li>Add one <b>Booking</b> (flight or hotel) and one <b>Expense</b>.</li>
+        <li>Open <b>Insights</b> → read your AI‑generated trip summary.</li>
+      </ul>
+      <p class="sub">That’s it — your trip is set. TravMate keeps everything in one place as you add more.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://apps.apple.com/us/app/travmate/id6751786758">Get TravMate on iOS</a>
+        <a class="btn alt" href="https://play.google.com/store/apps/details?id=com.eurappia.travmate">Get it on Android</a>
+        <a class="btn alt" href="https://travmate.app/">Open Web App</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="grid" style="margin-top:16px;">
+      <div class="card">
+        <div class="label">FAQs</div>
+        <details open>
+          <summary>Is TravMate a booking site?</summary>
+          <p class="sub">No — it doesn’t sell flights or hotels. TravMate is your personal <b>travel companion</b> to organize everything in one app.</p>
+        </details>
+        <details>
+          <summary>Do I need to enter every detail?</summary>
+          <p class="sub">No. Start simple (one trip, one booking). Add more only if you want. The app works at any level of detail.</p>
+        </details>
+        <details>
+          <summary>What about privacy?</summary>
+          <p class="sub">Your trip data is yours. You can delete your account anytime from the Profile screen, and all your data is removed from our servers.</p>
+        </details>
+      </div>
+      <div class="card center">
+        <div class="label">Download</div>
+        <h3>Start free. Keep your trip in one place.</h3>
+        <div class="stores">
+          <a href="https://apps.apple.com/us/app/travmate/id6751786758"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store"></a>
+          <a href="https://play.google.com/store/apps/details?id=com.eurappia.travmate"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
+        </div>
+        <p class="sub">Or use the <a href="https://travmate.app/">web app</a> on desktop.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="sub">© 2025 Eurappia Labs Pty Ltd · <a href="https://travmate.app/static/privacy_policy.html">Privacy</a> · <a href="https://travmate.app/static/terms.html">Terms</a></div>
+    </footer>
+  </div>
+</body>
+</html>

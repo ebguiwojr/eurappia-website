@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EurAppia Labs | IClarity Tools for the Way You Live</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="EurAppia Labs creates emotionally intelligent apps that bring clarity to travel, shopping, and life — including TravMate and CartMate.">
+  <meta name="keywords" content="TravMate, CartMate, travel planner, shopping list, expense tracker, AI apps, reflection apps, EurAppia Labs, clarity tools, life apps, startup tools">
+
+  <!-- Open Graph for social -->
+  <meta property="og:title" content="EurAppia Labs | Clarity Tools for the Way You Live">
+  <meta property="og:description" content="From groceries to getaways, EurAppia Labs builds clarity apps like TravMate and CartMate — tools that help you live, plan, and evolve.">
+  <meta property="og:image" content="https://eurappia.com/images/eurappia_preview.png">
+  <meta property="og:url" content="https://eurappia.com">
+  <meta property="og:type" content="website">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "EurAppia Labs Pty Ltd",
+    "url": "https://eurappia.com",
+    "logo": "https://eurappia.com/images/Eurappia_Labs_Transparent.png",
+    "sameAs": ["https://facebook.com/eurappia", "https://instagram.com/eurappia"],
+    "description": "EurAppia Labs builds smart apps like TravMate and CartMate for travelers and shoppers.",
+    "founder": {
+      "@type": "Person",
+      "name": "Efren Guiwo"
+    },
+    "product": [
+      {
+        "@type": "Product",
+        "name": "CartMate",
+        "description": "Smart shopping list and budgeting app with receipt scanning and AI insights.",
+        "url": "https://eurappia.com/cartmate.html",
+        "image": "https://eurappia.com/images/cartmate_logo.png",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "AUD",
+          "availability": "https://schema.org/InStock",
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "AUD"
+            },
+            "shippingDestination": {
+              "@type": "DefinedRegion",
+              "addressCountry": "AU"
+            }
+          },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "isReturnable": false,
+            "applicableCountry": {
+              "@type": "Country",
+              "name": "AU"
+            },
+            "returnPolicyCategory": "MerchantReturnNotPermitted"
+          }
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "TravMate",
+        "description": "Travel companion for organizing bookings, expenses, documents, and AI itineraries.",
+        "url": "https://eurappia.com/travmate.html",
+        "image": "https://eurappia.com/images/travmate_logo.jpg",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "AUD",
+            "availability": "https://schema.org/InStock",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0",
+                "currency": "AUD"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "AU"
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "isReturnable": false,
+              "applicableCountry": {
+                "@type": "Country",
+                "name": "AU"
+              },
+              "returnPolicyCategory": "MerchantReturnNotPermitted"
+            }
+          }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Stylesheet + Fonts -->
+  <link rel="icon" type="image/png" href="images/Eurappia_Labs_ico.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet"/>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17764364761"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17764364761');
+</script>
+<body>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/Eurappia_Labs_Transparent.png" alt="EurAppia Labs Pty Ltd logo" />
+      </a>
+    </div>
+    <div class="HeaderText"><h1>EurAppia Labs</h1></div>
+    <div class="menu-toggle"><span></span><span></span><span></span></div>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="#apps">Our Apps</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION with Carousel -->
+  <section class="hero">
+    <h2>Where Ideas Ignite</h2>
+    <p>From a single spark to powerful tools—EurAppia builds clarity apps for how you live, plan, and evolve.</p>
+    <a href="#apps" class="cta-btn">Explore Our Apps</a>
+
+    <div class="carousel" id="carousel">
+      <img src="images/carousel1.png" class="active" alt="TravMate screenshot" />
+      <img src="images/carousel2.png" alt="TravMate in action" />
+      <img src="images/carousel3.png" alt="CartMate screenshot" />
+      <img src="images/carousel4.png" alt="CartMate in action" />
+      <div class="carousel-controls" id="dots"></div>
+    </div>
+  </section>
+
+  <!-- Mini About Blurb -->
+  <section class="about">
+    <h3>Startup Heart. Real Impact.</h3>
+    <p>
+          EurAppia Labs is a modern startup creating simple, 
+          beautiful tools that bring clarity and ease 
+          to everyday life—one app at a time.
+    </p>
+  </section>
+
+  <!-- Apps Section -->
+  <section id="apps" class="featured-app">
+    <h3>Our Featured Products</h3>
+    <div class="app-grid">
+
+      <!-- CartMate -->
+      <div class="app-card">
+        <div class="app-image">
+          <img src="images/logo.png" alt="CartMate logo" />
+        </div>
+        <div class="app-card-content">
+          <h4>CartMate</h4>
+          <p>
+            Shopping lists, receipts, budgets, and AI insights in one simple app.
+          </p>
+          <a href="cartmate.html" class="cta-btn">Explore CartMate</a>
+        </div>
+      </div>
+
+      <!-- TravMate -->
+      <div class="app-card">
+        <div class="app-image">
+          <img src="images/travmate_logo.jpg" alt="TravMate logo" />
+        </div>
+        <div class="app-card-content">
+          <h4>TravMate</h4>
+          <p>
+            Organize your trips with bookings, expenses, documents, and AI-powered itineraries.
+          </p>
+          <a href="travmate.html" class="cta-btn">Explore TravMate</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>&copy; 2025 EurAppia Labs Pty Ltd. All rights reserved.</p>
+    <p>ABN: 66 687 679 214 • Contact: <a href="mailto:info@eurappia.com">info@eurappia.com</a></p>
+    <p><a href="https://eurappia.com/legal.html">Privacy & Terms</a></p>
+  </footer>
+
+  <!-- JS: Nav Toggle, Carousel, Theme -->
+  <script>
+    // Mobile nav
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', e => {
+      e.stopPropagation();
+      nav.classList.toggle('active');
+      toggle.classList.toggle('active');
+    });
+    document.body.addEventListener('click', e => {
+      if (nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('active');
+        toggle.classList.remove('active');
+      }
+    });
+
+    // Carousel
+    const slides = document.querySelectorAll('.carousel img');
+    const dotsContainer = document.getElementById('dots');
+    let currentSlide = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => showSlide(i);
+      dotsContainer.appendChild(dot);
+    });
+
+    function showSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      dotsContainer.children[currentSlide].classList.remove('active');
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+      dotsContainer.children[currentSlide].classList.add('active');
+    }
+
+    setInterval(() => {
+      showSlide((currentSlide + 1) % slides.length);
+    }, 5000);
+
+    // Theme Toggle
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    }
+  </script>
+
+</body>
+</html>

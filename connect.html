@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect with EurAppia Labs</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Connect with EurAppia Labs. Download TravMate and CartMate, grab our contact details, and follow our founder.">
+  <meta name="keywords" content="EurAppia, TravMate, CartMate, EurAppia Labs, contact, connect, founder, apps">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Connect with EurAppia Labs">
+  <meta property="og:description" content="One stop to connect, download our apps, and stay in touch.">
+  <meta property="og:image" content="https://eurappia.com/images/eurappia_preview.png">
+  <meta property="og:url" content="https://eurappia.com/connect.html">
+  <meta property="og:type" content="website">
+
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"EurAppia Labs Pty Ltd",
+    "url":"https://eurappia.com",
+    "logo":"https://eurappia.com/images/Eurappia_Labs_Transparent.png",
+    "sameAs":["https://www.facebook.com/profile.php?id=61572386264768","https://instagram.com/eurappialabs"]
+  }
+  </script>
+
+  <!-- Fonts & Icon -->
+  <link rel="icon" type="image/png" href="images/Eurappia_Labs_ico.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#1e293b;
+      --muted:#475569;
+      --brand:#0d6efd;
+      --stroke:#e7edf6;
+      --shadow:rgba(13,110,253,0.12);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,-apple-system,Roboto,sans-serif;
+      background:
+        radial-gradient(1200px 800px at 10% -10%, rgba(13,110,253,0.16), transparent 40%),
+        radial-gradient(1000px 600px at 110% 0%, rgba(31,182,255,0.12), transparent 40%),
+        var(--bg);
+      color:var(--text);
+    }
+    /* Header */
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:16px 20px;max-width:1060px;margin:0 auto;
+    }
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+    .brand img{height:42px;width:auto}
+    .brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.3px}
+    .theme-toggle{
+      border:1px solid var(--stroke);background:transparent;color:var(--text);
+      padding:8px 12px;border-radius:999px;cursor:pointer;font-weight:600
+    }
+
+    /* Layout */
+    main{max-width:1060px;margin:24px auto 80px;padding:0 20px}
+    .shell{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start}
+    @media (max-width:900px){.shell{grid-template-columns:1fr}}
+
+    .card{
+      background:var(--card);border:1px solid var(--stroke);
+      border-radius:20px;padding:26px;box-shadow:0 10px 30px var(--shadow)
+    }
+    .card h2{margin:0 0 6px;font-size:32px;font-weight:700}
+    .subtitle{color:var(--muted);margin:0 0 16px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid var(--stroke);background:rgba(13,110,253,.07);
+      color:var(--text);padding:6px 10px;border-radius:999px;font-size:12px;margin-bottom:12px
+    }
+
+    /* Apps — card format */
+    .apps-card h3{margin:0 0 8px;font-size:18px}
+    .apps{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px}
+    @media (max-width:900px){.apps{grid-template-columns:1fr}}
+    .app{
+      border:1px solid var(--stroke);border-radius:14px;padding:14px;
+      background:linear-gradient(180deg, rgba(13,110,253,.06), transparent);
+    }
+    .app h4{display:flex;align-items:center;gap:8px;margin:0 0 8px;font-size:16px}
+    .app-logo{height:40px;width:auto;border-radius:10px}
+    .app p{margin:0 0 12px}
+    .store-row{display:flex;gap:10px;flex-wrap:wrap}
+    .store-badge{height:42px;border-radius:8px;display:block}
+
+    /* Two-up cards */
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+
+    .chip{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--stroke);color:var(--muted)}
+    .chips{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* QR */
+    .qr-wrap{display:grid;place-items:center;border:1px dashed var(--stroke);border-radius:16px;padding:18px;background:var(--card)}
+    .qr-wrap img{width:100%;max-width:220px;height:auto;border-radius:12px}
+    .muted{color:var(--muted);font-size:14px}
+    footer{max-width:1060px;margin:40px auto 60px;padding:0 20px;color:var(--muted);text-align:left}
+    .links-row a{color:var(--brand);text-decoration:none;font-weight:600}
+    .links-row{display:flex;gap:14px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">
+      <img src="images/Eurappia_Labs_Transparent.png" alt="EurAppia Labs logo">
+      <h1>EurAppia Labs</h1>
+    </a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+  </header>
+
+  <main>
+    <section class="shell">
+      <!-- Left column -->
+      <div class="card">
+        <span class="pill">Founder-led • Sydney, AU</span>
+        <h2>Connect with EurAppia Labs</h2>
+        <p class="subtitle">Clarity tools for the way you live — <strong>TravMate</strong> for travel, <strong>CartMate</strong> for groceries & budgets.</p>
+
+        <!-- Get the apps (cards with titles) -->
+        <div class="apps-card">
+          <h3>Get the apps</h3>
+
+          <div class="apps">
+            <!-- TravMate -->
+            <div class="app">
+              <h4><img class="app-logo" src="images/travmate_logo.jpg" alt="TravMate logo">TravMate</h4>
+              <p class="muted">Organise bookings, expenses & documents — with AI itineraries.</p>
+              <div class="store-row">
+                <a href="https://play.google.com/store/apps/details?id=com.eurappia.travmate" target="_blank" rel="noopener" aria-label="Get TravMate on Google Play">
+                  <img class="store-badge" src="images/google-play-badge.png" alt="Get it on Google Play">
+                </a>
+                <a href="https://apps.apple.com/us/app/travmate/id6751786758" target="_blank" rel="noopener" aria-label="Download TravMate on the App Store">
+                  <img class="store-badge" src="images/appstore-badge.svg" alt="Download on the App Store">
+                </a>
+              </div>
+            </div>
+
+            <!-- CartMate -->
+            <div class="app">
+              <h4><img class="app-logo" src="images/logo.png" alt="CartMate logo">CartMate</h4>
+              <p class="muted">Smart lists, receipt scanning, analytics & AI insights for budgeting.</p>
+              <div class="store-row">
+                <a href="https://play.google.com/store/apps/details?id=com.eurappia.cartmate" target="_blank" rel="noopener" aria-label="Get CartMate on Google Play">
+                  <img class="store-badge" src="images/google-play-badge.png" alt="Get it on Google Play">
+                </a>
+                <a href="https://apps.apple.com/us/app/cartmate/id6751880727" target="_blank" rel="noopener" aria-label="Download CartMate on the App Store">
+                  <img class="store-badge" src="images/appstore-badge.svg" alt="Download on the App Store">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Learn more links -->
+          <div class="links-row" style="margin-top:12px">
+            <a href="travmate.html" target="_blank" rel="noopener">Learn more about TravMate →</a>
+            <a href="cartmate.html" target="_blank" rel="noopener">Learn more about CartMate →</a>
+          </div>
+        </div>
+
+        <!-- Founder & Contact -->
+        <div class="grid" style="margin-top:20px">
+          <div class="card" style="padding:18px">
+            <h3 style="margin:0 0 6px;font-size:18px;">Founder</h3>
+            <p class="muted" style="margin:0 0 10px;">Efren Guiwo • EurAppia Labs Pty Ltd</p>
+            <div class="chips">
+              <span class="chip">Sydney (GMT+10)</span>
+              <span class="chip">Early Supporter Friendly</span>
+              <span class="chip">Bootstrapped</span>
+            </div>
+          </div>
+
+          <div class="card" style="padding:18px">
+            <h3 style="margin:0 0 6px;font-size:18px;">Contact</h3>
+            <p class="muted" style="margin:0">
+              ✉️ <a class="links-row" href="mailto:support@eurappia.com">support@eurappia.com</a><br/>
+              🌐 <a class="links-row" href="https://eurappia.com" target="_blank" rel="noopener">eurappia.com</a><br/>
+              📄 <a class="links-row" href="https://eurappia.com/legal.html" target="_blank" rel="noopener">Privacy & Terms</a>
+            </p>
+            <div class="links-row" style="margin-top:8px">
+              <a href="https://www.facebook.com/profile.php?id=61572386264768" target="_blank" rel="noopener">Facebook</a>
+              <a href="https://instagram.com/eurappialabs" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: QR / vCard -->
+      <div class="card">
+        <div class="qr-wrap">
+          <h3 style="margin:4px 0 10px;">Scan to Save</h3>
+          <p class="muted" style="margin:0 0 12px;text-align:center;">This page — keep our details on your phone</p>
+          <img src="images/connect_qr.png" alt="QR to eurappia.com/connect.html" />
+          <p class="muted" style="margin:10px 0 0;font-size:12px;">Or visit: <strong>eurappia.com/connect.html</strong></p>
+          <p style="margin:12px 0 0;">
+            <a class="btn" href="Efren_Guiwo_Eurappia.vcf" download>Download vCard</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 EurAppia Labs Pty Ltd • ABN 66 687 679 214</p>
+  </footer>
+
+  <script>
+    function toggleTheme(){
+      const html=document.documentElement;
+      html.setAttribute('data-theme', html.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+    }
+  </script>
+</body>
+</html>

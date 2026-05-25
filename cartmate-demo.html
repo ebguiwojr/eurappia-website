@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CartMate – Scan Receipts. Smarter Grocery Lists. Real Insights.</title>
+
+  <!-- SEO -->
+  <meta name="description" content="CartMate turns your grocery chaos into clarity. Scan a receipt, auto-build your list, and get AI insights about where your money goes. Try the guided 60‑second task.">
+  <meta name="keywords" content="CartMate, grocery list app, receipt scanner, AI grocery insights, Eurappia Labs">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CartMate – Scan Receipts. Smarter Grocery Lists. Real Insights.">
+  <meta property="og:description" content="Watch a quick demo, then try the 60‑second task. CartMate scans receipts, auto-organizes lists, and shows AI insights for your spending.">
+  <meta property="og:image" content="https://eurappia.com/images/cartmate_preview.png">
+  <meta property="og:url" content="https://eurappia.com/cartmate-demo.html">
+  <meta property="og:type" content="website">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CartMate",
+    "operatingSystem": "iOS, Android, Web",
+    "applicationCategory": "ShoppingApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "2.99",
+      "priceCurrency": "AUD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "3"
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111833;
+      --ink:#eef3ff;
+      --muted:#b7c3ff;
+      --brand:#5b8cff;
+      --accent:#8af5c7;
+      --ring: rgba(91,140,255,.35);
+    }
+    [data-theme="light"]:root{
+      --bg:#f7f9ff; --card:#ffffff; --ink:#0d1225; --muted:#58628a; --brand:#2752ff; --accent:#0bb07b; --ring: rgba(39,82,255,.15);
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+
+    /* HERO */
+    .hero{display:grid;gap:18px;padding:28px;border-radius:20px;background:linear-gradient(180deg, var(--card), rgba(255,255,255,0));box-shadow:0 20px 60px rgba(13,18,37,.18);}
+    .eyebrow{font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-size:.8rem}
+    h1{font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.1;margin:0}
+    .sub{font-size:clamp(1rem,1.4vw,1.1rem);color:var(--muted)}
+
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;background:var(--brand);color:white;font-weight:700;box-shadow:0 8px 24px var(--ring)}
+    .btn.alt{background:transparent;color:var(--brand);border:2px solid var(--brand)}
+
+    .trust{display:flex;flex-wrap:wrap;gap:18px;margin-top:6px;color:var(--muted);font-size:.92rem}
+    .trust .pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:8px 12px;border-radius:999px}
+
+    /* KEY FRAMES */
+    .grid{display:grid;gap:16px;margin-top:26px}
+    @media(min-width:860px){.grid{grid-template-columns:1.1fr .9fr}}
+    .card{background:var(--card);border:1px solid rgba(91,140,255,.12);border-radius:18px;padding:18px;box-shadow:0 16px 40px rgba(12,17,35,.18)}
+    .label{font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+    .card h3{margin:.3rem 0 0;font-size:1.2rem}
+    .steps{display:grid;gap:10px;margin-top:8px}
+    @media(min-width:700px){.steps{grid-template-columns:repeat(3,1fr)}}
+    .step{border:1px dashed rgba(91,140,255,.25);border-radius:16px;padding:14px}
+    .step b{display:block;margin-bottom:6px}
+
+    /* VIDEO */
+    .video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:16px}
+
+    /* FEATURE GRID */
+    .features{display:grid;gap:14px;margin-top:10px}
+    @media(min-width:900px){.features{grid-template-columns:repeat(3,1fr)}}
+    .feature{padding:16px;border-radius:16px;background:var(--card);border:1px solid rgba(91,140,255,.12)}
+    .feature h4{margin:.4rem 0}
+    .feature p{color:var(--muted);margin:0}
+
+    /* MINI TASK */
+    .task{display:grid;gap:12px}
+    @media(min-width:820px){.task{grid-template-columns:1.1fr .9fr}}
+    .hint{font-size:.95rem;color:var(--muted)}
+    .checklist{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .checklist li{background:rgba(11,176,123,.08);border:1px solid rgba(11,176,123,.22);padding:10px 12px;border-radius:12px}
+
+    /* FAQ */
+    details{background:var(--card);border:1px solid rgba(91,140,255,.12);border-radius:14px;padding:12px}
+    summary{cursor:pointer;font-weight:700}
+
+    /* FOOTER */
+    footer{margin:38px 0 20px;color:var(--muted);font-size:.9rem}
+    .stores{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+    .stores img{height:60px;border-radius:12px}
+
+    /* UTIL */
+    .center{text-align:center}
+    .spacer{height:10px}
+    .small{font-size:.9rem;color:var(--muted)}
+  </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17764364761"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17764364761');
+</script>
+<body>
+  <div class="wrap">
+    <!-- HERO -->
+     <section class="hero"> 
+      <!-- <div class="eyebrow">CartMate Demo · 60‑second try‑it task</div> -->
+      <h1>Snap a receipt → CartMate builds your list & shows where your money goes.</h1>
+      <p class="sub">Stop re‑typing groceries. Scan receipts, auto‑organize your shopping list, and get simple AI insights about your spend. Works on iOS, Android, and Web.</p>
+      <div class="cta-row">
+        <a id="btn-ios" class="btn" href="https://apps.apple.com/us/app/cartmate/id6751880727">Download on iOS</a>
+        <a id="btn-android" class="btn alt" href="https://play.google.com/store/apps/details?id=com.eurappia.cartmate">Get it on Android</a>
+        <a id="btn-web" class="btn alt" href="https://cartmate.app/">Open Web App</a>
+      </div>
+      <div class="trust">
+        <div class="pill">🔒 Privacy‑first. Your data is yours.</div>
+        <div class="pill">⚡ 14‑day full‑access free trial</div>
+        <div class="pill">🧠 AI insights from real receipts</div>
+      </div>
+    </section>
+
+    <!-- KEY FRAMES: How it works + video -->
+    <section class="grid">
+      <div class="card">
+        <div class="label">How it works</div>
+        <h3>From receipt to insights in 3 steps</h3>
+        <div class="steps">
+          <div class="step"><b>1) Scan</b> Open CartMate → tap <i>Scan Receipt</i>. We read store, date, and items automatically.</div>
+          <div class="step"><b>2) Auto‑list</b> Items are parsed into a smart list you can sort by aisle, category, or priority.</div>
+          <div class="step"><b>3) AI insights</b> See top categories, monthly spend, and patterns you can act on.</div>
+        </div>
+        <div class="spacer"></div>
+        <div class="features">
+          <div class="feature"><h4>📸 OCR that actually works</h4><p>Designed for real supermarket receipts — even crumpled ones.</p></div>
+          <div class="feature"><h4>🧾 Keep your history</h4><p>All receipts saved with totals, so trends are effortless.</p></div>
+          <div class="feature"><h4>📊 Simple, honest insights</h4><p>Plain‑English breakdowns of where your money goes.</p></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="label">Watch 1‑minute demo</div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/y3KBjHv5usU?si=irAKfFUU7_Xfcq-j" title="CartMate Demo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="small center">Tip: After watching, try the 60‑second task below to feel the value.</p>
+      </div>
+    </section>
+
+    <!-- MINI TASK: get to the aha moment -->
+    <section class="card" style="margin-top:16px;">
+      <div class="label">Try it now (60 seconds)</div>
+      <h3>Feel the value: one tiny task</h3>
+      <p class="hint">Find any recent supermarket receipt. If you don't have one handy, use the web app and try a photo of a receipt on your computer.</p>
+      <ul class="checklist">
+        <li>Install/open CartMate → tap <b>Scan Receipt</b>.</li>
+        <li>Check items look right → tap <b>Save as Shopping List</b>.</li>
+        <li>Open <b>Insights</b> → read your top category & month‑to‑date spend.</li>
+      </ul>
+      <p class="hint">If that helped, keep it for next shop: CartMate turns each scan into a reusable list.</p>
+      <div class="cta-row">
+        <a id="btn-ios-2" class="btn" href="https://apps.apple.com/us/app/cartmate/id6751880727">Get CartMate on iOS</a>
+        <a id="btn-android-2" class="btn alt" href="https://play.google.com/store/apps/details?id=com.eurappia.cartmate">Get it on Android</a>
+        <a id="btn-web-2" class="btn alt" href="https://cartmate.app/">Open Web App</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="grid" style="margin-top:16px;">
+      <div class="card">
+        <div class="label">FAQs</div>
+        <details open>
+          <summary>Is CartMate a budgeting app?</summary>
+          <p class="small">No — it focuses on <b>grocery clarity</b>. Scan receipts, build smarter lists, and see simple spend insights. (Budgeting apps are great; CartMate simply solves the <i>grocery</i> problem well.)</p>
+        </details>
+        <details>
+          <summary>Do I need to keep scanning forever?</summary>
+          <p class="small">No. Scans help build a reusable list and baseline. From there, maintain the list and scan weekly or whenever helpful.</p>
+        </details>
+        <details>
+          <summary>What about privacy?</summary>
+          <p class="small">Your data is yours. We don't sell it. You can delete your account anytime from the Profile screen and it removes your data from our servers.</p>
+        </details>
+      </div>
+
+      <div class="card center">
+        <div class="label">Download</div>
+        <h3>Start free. Keep your receipts working for you.</h3>
+        <div class="stores">
+          <a id="store-ios" href="https://apps.apple.com/us/app/cartmate/id6751880727"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store"></a>
+          <a id="store-android" href="https://play.google.com/store/apps/details?id=com.eurappia.cartmate"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
+        </div>
+        <p class="small">Or use the <a id="link-web" href="https://cartmate.app/">web app</a> on desktop.</p>
+      </div>
+    </section>
+
+    <footer class="center">
+      <div class="small">© 2025 Eurappia Labs Pty Ltd · <a href="https://cartmate.app/static/privacy_policy.html">Privacy</a> · <a href="https://cartmate.app/static/terms.html">Terms</a></div>
+    </footer>
+  </div>
+
+  <!-- UTM CAPTURE & STORE-LINK APPEND -->
+  <script>
+  (function(){
+    const params = new URLSearchParams(window.location.search);
+    const utm = {
+      source: params.get('utm_source') || 'direct',
+      medium: params.get('utm_medium') || 'none',
+      campaign: params.get('utm_campaign') || 'cartmate_demo',
+      content: params.get('utm_content') || '',
+      term: params.get('utm_term') || ''
+    };
+    try{ localStorage.setItem('cartmate_utm', JSON.stringify(utm)); }catch(e){}
+
+    const withUtm = (url) => {
+      const u = new URL(url, window.location.origin);
+      if (!u.searchParams.get('utm_source')){
+        u.searchParams.set('utm_source', utm.source);
+        u.searchParams.set('utm_medium', utm.medium);
+        u.searchParams.set('utm_campaign', utm.campaign);
+        if(utm.content) u.searchParams.set('utm_content', utm.content);
+        if(utm.term) u.searchParams.set('utm_term', utm.term);
+      }
+      return u.toString();
+    };
+
+    const ids = ['btn-ios','btn-android','btn-web','btn-ios-2','btn-android-2','btn-web-2','store-ios','store-android','link-web'];
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.href = withUtm(el.href);
+    });
+
+    // Optional: ping your backend to log page view with UTM (uncomment and set URL)
+    // fetch('https://YOUR_CLOUD_FUNCTION_DOMAIN/logMarketing', {
+    //   method:'POST', headers:{'Content-Type':'application/json'},
+    //   body: JSON.stringify({ app:'CartMate', page:'demo', utm, ts: Date.now() })
+    // }).catch(()=>{});
+  })();
+  </script>
+</body>
+</html>
