@@ -148,6 +148,13 @@ nav a:hover {
   background: var(--cta-hover);
   transform: scale(1.05);
 }
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
 
 /* —— Carousel —— */
 .carousel {
