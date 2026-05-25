@@ -12,7 +12,9 @@
     href="images/Eurappia_Labs_ico.png"
   />
 
-  <link rel="stylesheet" href="css/about-styles.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/about.css" />
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17764364761"></script>
@@ -36,18 +38,16 @@
       <h1>About EurAppia Labs</h1>
     </div>
 
-    <div class="menu-toggle">
-      <span></span><span></span><span></span>
-    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="aboutNav">Menu ☰</button>
 
-    <nav>
+    <nav id="aboutNav">
       <a href="index.html">Home</a>
       <a href="index.html#apps">Our Apps</a>
       <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
+  <main class="about-main">
     <section id="who-we-are">
       <h2>Who We Are</h2>
       <p>
@@ -147,11 +147,11 @@
       </p>
       <p>
         Try our apps today:
-        <ul>
+      </p>
+      <ul class="journey-links">
           <li><a href="https://cartmate.app" target="_blank">🛒 CartMate – Smart shopping & budgeting</a></li>
           <li><a href="https://travmate.app" target="_blank">✈️ TravMate – Travel planning & AI itineraries</a></li>
         </ul>
-      </p>
       <p>
         Follow our journey on
         <a href="https://www.facebook.com/eurappia" target="_blank">Facebook</a>,
@@ -162,19 +162,28 @@
   </main>
 
 <footer id="contact">
-  <p>&copy; 2025 EurAppia Labs Pty Ltd. All rights reserved.</p>
+  <p>&copy; 2026 EurAppia Labs Pty Ltd. All rights reserved.</p>
   <p>ABN: 66 687 679 214</p>
   <p>Contact us: <a href="mailto:info@eurappia.com">info@eurappia.com</a></p>
 </footer>
 
   <script>
     // Hamburger toggle
-    const toggle = document.querySelector('.menu-toggle');
-    const nav    = document.querySelector('nav');
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-      toggle.classList.toggle('active');
-    });
+  const btn = document.getElementById('menuBtn');
+  const nav = document.getElementById('aboutNav');
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const opened = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', opened ? 'true' : 'false');
+  });
+  document.body.addEventListener('click', (e) => {
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+
   </script>
 
 </body>
