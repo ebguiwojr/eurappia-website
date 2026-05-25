@@ -21,6 +21,7 @@
 }
 .hero-notes { display: grid; gap: 8px; }
 .badges, .store-row { display:flex; flex-wrap:wrap; gap:12px 14px; align-items:center; justify-content:flex-start; }
+.store-row { justify-content: center; }
 .store { height:58px; border-radius:10px; box-shadow: 0 6px 16px rgba(12,24,40,.12); }
 .subcta { margin-left:10px; color:var(--color-blue-deep); font-weight:700; text-decoration: none; }
 .subcta:hover { text-decoration: underline; }
@@ -83,6 +84,8 @@ nav.open, .links.open { display:block; }
 .media-top, .grid-top { margin-top: 12px; }
 .download-lead { color: var(--color-muted); margin: 0 0 14px; }
 .offer-note, .web-note { margin-top: 6px; color: var(--color-blue-deep); font-weight: 600; font-size: clamp(.88rem, .38vw + .78rem, .98rem); line-height: 1.55; }
+.web-note { display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.web-icon { width: 28px; height: 28px; border-radius: 6px; object-fit: contain; }
 .web-link { color: var(--color-orange); }
 .center { text-align: center; }
 
