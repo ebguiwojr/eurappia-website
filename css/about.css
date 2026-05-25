@@ -1,0 +1,6 @@
+main, footer { max-width: 900px; margin: 0 auto; padding: 1em; }
+main section { padding: 3em 0; background: #fff; border-radius: 8px; margin-bottom: 2em; }
+main h2 { text-align:center; margin-bottom: .5em; }
+main p, main ul { line-height:1.6; color:#555; max-width:800px; margin:.5em auto; }
+.team-member { text-align:center; }
+.team-member img { width:150px; border-radius:50%; }
