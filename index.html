@@ -129,7 +129,7 @@
       </a>
     </div>
     <div class="HeaderText"><h1>EurAppia Labs</h1></div>
-    <div class="menu-toggle"><span></span><span></span><span></span></div>
+    <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span><em>Menu</em></button>
     <nav>
       <a href="about.html">About</a>
       <a href="#apps">Our Apps</a>
@@ -214,13 +214,15 @@
     const nav = document.querySelector('nav');
     toggle.addEventListener('click', e => {
       e.stopPropagation();
-      nav.classList.toggle('active');
+      const opened = nav.classList.toggle('active');
       toggle.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', opened ? 'true' : 'false');
     });
     document.body.addEventListener('click', e => {
       if (nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
         nav.classList.remove('active');
         toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
       }
     });
 
