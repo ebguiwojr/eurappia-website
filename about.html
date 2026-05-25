@@ -49,7 +49,7 @@
     </nav>
   </header>
 
-  <main>
+  <main class="about-main">
     <section id="who-we-are">
       <h2>Who We Are</h2>
       <p>
@@ -149,11 +149,11 @@
       </p>
       <p>
         Try our apps today:
-        <ul>
+      </p>
+      <ul class="journey-links">
           <li><a href="https://cartmate.app" target="_blank">🛒 CartMate – Smart shopping & budgeting</a></li>
           <li><a href="https://travmate.app" target="_blank">✈️ TravMate – Travel planning & AI itineraries</a></li>
         </ul>
-      </p>
       <p>
         Follow our journey on
         <a href="https://www.facebook.com/eurappia" target="_blank">Facebook</a>,
@@ -173,9 +173,16 @@
     // Hamburger toggle
     const toggle = document.querySelector('.menu-toggle');
     const nav    = document.querySelector('nav');
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', e => {
+      e.stopPropagation();
       nav.classList.toggle('active');
       toggle.classList.toggle('active');
+    });
+    document.body.addEventListener('click', e => {
+      if (nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('active');
+        toggle.classList.remove('active');
+      }
     });
   </script>
 

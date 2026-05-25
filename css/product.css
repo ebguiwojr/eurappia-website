@@ -30,14 +30,19 @@
 .card, .step { padding:18px; }
 .card p { color: var(--color-muted); }
 .download, .faq h2 { text-align:center; }
-.screen-grid { display:grid; grid-template-columns:1fr; gap:16px; margin-top:12px; justify-items:center; }
-.screen img { width:100%; max-width:420px; aspect-ratio:9/16; object-fit:contain; background:#fff; }
+.screen-carousel { position: relative; max-width: 460px; margin: 12px auto 0; }
+.screen-carousel .slide { display: none; margin: 0; }
+.screen-carousel .slide.active { display: block; }
+.screen-carousel .carousel-controls { position:absolute; bottom:10px; left:50%; transform:translateX(-50%); display:flex; gap:8px; }
+.screen img { width:100%; max-width:420px; aspect-ratio:9/16; object-fit:contain; background:#fff; display:block; }
+.dot { width: 14px; height: 14px; border-radius: 50%; background:#bbb; cursor:pointer; }
+.dot.active { background: var(--color-gold); transform: scale(1.15); }
 
 .links.open { display:block; }
 
 @media (max-width: 900px) {
   .hero-inner, .grid, .steps { grid-template-columns:1fr; }
-  .screen-grid { grid-template-columns:1fr; justify-items:center; }
+  .screen-carousel { max-width: 360px; }
   .links { display:none; position:absolute; left:0; right:0; top:64px; background:#fff; border-top:1px solid #eee; padding:12px 16px; }
   .links a { display:block; padding:10px 0; }
   .store { height:52px; }

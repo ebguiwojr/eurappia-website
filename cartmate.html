@@ -144,17 +144,18 @@
   <div class="wrap">
     <h2 class="section-title">App screens</h2>
     <p class="section-lead">A quick look at CartMate’s flow — from sign in to your main list, editing items, and checking analytics.</p>
-    <div class="screen-grid grid-top">
-      <figure class="screen"><img src="images/Login_Screen.png" alt="Login"/></figure>
-      <figure class="screen"><img src="images/Main_Screen.png" alt="Main"/></figure>
-      <figure class="screen"><img src="images/Edit_Screen.png" alt="Edit Shopping List"/></figure>
-      <figure class="screen"><img src="images/Analytics.png" alt="Analytics"/></figure>
+    <div class="screen-carousel grid-top" id="screenCarousel">
+      <figure class="screen slide active"><img src="images/Login_Screen.png" alt="Login"/></figure>
+      <figure class="screen slide"><img src="images/Main_Screen.png" alt="Main"/></figure>
+      <figure class="screen slide"><img src="images/Edit_Screen.png" alt="Edit Shopping List"/></figure>
+      <figure class="screen slide"><img src="images/Analytics.png" alt="Analytics"/></figure>
+      <div class="carousel-controls" id="screenDots"></div>
     </div>
   </div>
 </section>
 
 <section class="download" id="download">
-  <div class="wrap" class="center">
+  <div class="wrap center">
     <h2 class="section-title">Get CartMate</h2>
     <p class="download-lead">Plan smarter shops with clear lists and spending visibility.</p>
 
@@ -199,7 +200,37 @@
   // mobile menu
   const btn = document.getElementById('menuBtn');
   const links = document.getElementById('navLinks');
-  btn.addEventListener('click', () => links.classList.toggle('open'));
+  btn.addEventListener('click', (e) => { e.stopPropagation(); links.classList.toggle('open'); });
+  document.body.addEventListener('click', (e) => {
+    if (links.classList.contains('open') && !links.contains(e.target) && !btn.contains(e.target)) {
+      links.classList.remove('open');
+    }
+  });
+
+
+  // app screens carousel
+  const screenSlides = document.querySelectorAll('#screenCarousel .slide');
+  const screenDots = document.getElementById('screenDots');
+  let currentScreen = 0;
+
+  screenSlides.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => showScreen(i);
+    screenDots.appendChild(dot);
+  });
+
+  function showScreen(index) {
+    screenSlides[currentScreen].classList.remove('active');
+    screenDots.children[currentScreen].classList.remove('active');
+    currentScreen = index;
+    screenSlides[currentScreen].classList.add('active');
+    screenDots.children[currentScreen].classList.add('active');
+  }
+
+  setInterval(() => {
+    showScreen((currentScreen + 1) % screenSlides.length);
+  }, 4500);
 
   // optional: simple outbound tracking
   document.querySelectorAll('a[target="_blank"]').forEach(a=>{
