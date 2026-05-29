@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "eurappia-identity"
+  },
+  "targets": {
+    "eurappia-identity": {
+      "hosting": {
+        "eurappia": [
+          "eurappia"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
